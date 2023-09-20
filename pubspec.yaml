@@ -1,0 +1,39 @@
+name: yolo
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  camera: ^0.10.5
+  flutter_tflite: ^1.0.1
+  permission_handler: ^10.4.3
+  flutter_tts: ^3.8.2
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.11.0
+
+  flutter_lints: ^2.0.0
+
+flutter_icons:
+  image_path: "assets/MegaViewLogo.png"
+  adaptive_icon_foreground: "assets/MegaViewLogo.png"
+  adaptive_icon_background: "#000000"
+  android: true
+  ios: true
+
+flutter:
+  assets:
+    - assets/
+  uses-material-design: true
