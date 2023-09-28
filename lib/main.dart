@@ -121,7 +121,7 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
             Scaffold(
               appBar: AppBar(
                 backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-                title: const Text('MegaView Text Recognition'),
+                title: const Text('MegaView'),
               ),
               backgroundColor: _isPermissionGranted ? Colors.transparent : null,
               body: _isPermissionGranted
@@ -141,7 +141,7 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
                             const Size(256, 64), // Set the desired width and height
                           ),
                         ),
-                        child: const Text('Scan text'),
+                        child: const Text('Scan'),
                       ),
                     ),
                   ),

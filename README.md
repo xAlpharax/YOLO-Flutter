@@ -1,5 +1,7 @@
 # yolo
 
+NOT WORKING - will try at some point with the tflite-flutter package.
+
 A new Flutter project.
 
 ## Getting Started
