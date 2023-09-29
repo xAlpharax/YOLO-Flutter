@@ -12,14 +12,15 @@ dependencies:
 
   camera: ^0.10.5
   flutter_tflite: ^1.0.1
+  flutter_vision: ^1.1.4
   permission_handler: ^10.4.3
   flutter_tts: ^3.8.2
 
   google_mlkit_text_recognition: ^0.10.0
   google_mlkit_object_detection: ^0.10.0
 
-  flutter_sound: ^9.2.13
-  google_ml_kit: ^0.16.2
+#  flutter_sound: ^9.2.13
+#  google_ml_kit: ^0.16.2
 
   cupertino_icons: ^1.0.2
 
