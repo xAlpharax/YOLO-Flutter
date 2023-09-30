@@ -1,12 +1,17 @@
 import 'package:camera/camera.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
-import 'package:google_mlkit_object_detection/google_mlkit_object_detection.dart';
-import 'package:flutter_tflite/flutter_tflite.dart';
+// import 'package:google_mlkit_object_detection/google_mlkit_object_detection.dart';
+// import 'package:flutter_tflite/flutter_tflite.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:flutter_vision/flutter_vision.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:yolo/result_screen.dart';
 
 import 'package:flutter/material.dart';
+import 'dart:typed_data';
+import 'dart:async';
 import 'dart:io';
 
 void main() {
@@ -43,6 +48,8 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
   late final Future<void> _future;
   CameraController? _cameraController;
 
+  late FlutterVision vision;
+
   final textRecognizer = TextRecognizer();
 
   FlutterTts flutterTts = FlutterTts(); // TTS
@@ -50,6 +57,8 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
+
+    vision = FlutterVision(); // YOLO
     initTTS(); // TTS
 
     WidgetsBinding.instance.addObserver(this);
@@ -80,6 +89,7 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
     _stopCamera();
     textRecognizer.close();
     flutterTts.stop(); // TTS Stop
+    vision.closeYoloModel(); // YOLO Stop
     super.dispose();
   }
 
