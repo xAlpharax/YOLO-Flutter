@@ -8,7 +8,6 @@ class ResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
-      //backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       title: const Text('Result'),
     ),
     body: Container(

@@ -7,7 +7,7 @@ import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:flutter_vision/flutter_vision.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:yolo/result_screen.dart';
+// import 'package:yolo/result_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'dart:typed_data';
@@ -236,31 +236,22 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
 
     final navigator = Navigator.of(context);
 
-    try {
-      final pictureFile = await _cameraController!.takePicture();
+    final pictureFile = await _cameraController!.takePicture();
 
-      final file = File(pictureFile.path);
+    final file = File(pictureFile.path);
 
-      final inputImage = InputImage.fromFile(file);
-      final recognizedText = await textRecognizer.processImage(inputImage);
+    final inputImage = InputImage.fromFile(file);
+    final recognizedText = await textRecognizer.processImage(inputImage);
 
-      speak(recognizedText.text);
+    speak(recognizedText.text);
 
-      await navigator.push(
-        MaterialPageRoute(
-            builder: (BuildContext context) =>
-                //ResultScreen(text: recognizedText.text)
-                YoloVideo(vision: vision)
-        ),
-      );
-    } catch (e) {
-      // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('An error occurred when scanning text'),
-        ),
-      );
-    }
+    await navigator.push(
+      MaterialPageRoute(
+          builder: (BuildContext context) =>
+            //ResultScreen(text: recognizedText.text)
+            YoloVideo(vision: vision)
+      ),
+    );
   }
 }
 
