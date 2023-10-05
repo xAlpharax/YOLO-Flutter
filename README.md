@@ -1,6 +1,6 @@
 # yolo
 
-NOT WORKING - will try at some point with the tflite-flutter package.
+WORKING. Got Flutter-Vision to work with it.
 
 A new Flutter project.
 
