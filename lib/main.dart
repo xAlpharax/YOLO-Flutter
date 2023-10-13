@@ -92,7 +92,7 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     _stopCamera();
-    textRecognizer.close();
+    textRecognizer.close(); // OCR Stop
     flutterTts.stop(); // TTS Stop
     vision.closeYoloModel(); // YOLO Stop
     super.dispose();
@@ -137,6 +137,7 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
               appBar: AppBar(
                 backgroundColor: Theme.of(context).colorScheme.inversePrimary,
                 title: const Text('MegaView'),
+                centerTitle: true,
               ),
               backgroundColor: _isPermissionGranted ? Colors.transparent : null,
               body: _isPermissionGranted

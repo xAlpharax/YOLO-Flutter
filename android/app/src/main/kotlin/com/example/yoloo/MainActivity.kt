@@ -1,4 +1,4 @@
-package com.example.yolo
+package com.example.yoloo
 
 import io.flutter.embedding.android.FlutterActivity
 
