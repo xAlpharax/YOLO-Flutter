@@ -11,8 +11,8 @@ dependencies:
     sdk: flutter
 
   camera: ^0.10.5
-  image_picker: ^1.0.4
-  flutter_speed_dial: ^7.0.0
+#  image_picker: ^1.0.4
+#  flutter_speed_dial: ^7.0.0
 #  flutter_tflite: ^1.0.1
   flutter_vision: ^1.1.4
   permission_handler: ^10.4.3
