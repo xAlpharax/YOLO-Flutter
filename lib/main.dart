@@ -1,17 +1,15 @@
 import 'package:camera/camera.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
+// import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 // import 'package:google_mlkit_object_detection/google_mlkit_object_detection.dart';
 // import 'package:flutter_tflite/flutter_tflite.dart';
 // import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:flutter_vision/flutter_vision.dart';
 // import 'package:image_picker/image_picker.dart';
-// import 'package:yolo/result_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'dart:io';
 import 'dart:ui';
 
 late List<CameraDescription> cameras;
@@ -34,7 +32,7 @@ class App extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       // home: const MainScreen(),
-      home: const MainScreen(),
+      home: const MainScreen()
     );
   }
 }
@@ -54,7 +52,7 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
 
   late FlutterVision vision; // YOLO
 
-  final textRecognizer = TextRecognizer(); // OCR
+  // final textRecognizer = TextRecognizer(); // OCR
 
   FlutterTts flutterTts = FlutterTts(); // TTS
 
@@ -91,7 +89,7 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     _stopCamera();
-    textRecognizer.close(); // OCR Stop
+    // textRecognizer.close(); // OCR Stop
     flutterTts.stop(); // TTS Stop
     vision.closeYoloModel(); // YOLO Stop
     super.dispose();
@@ -236,19 +234,18 @@ class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
 
     final navigator = Navigator.of(context);
 
-    final pictureFile = await _cameraController!.takePicture();
+    // final pictureFile = await _cameraController!.takePicture();
 
-    final file = File(pictureFile.path);
+    // final file = File(pictureFile.path);
 
-    final inputImage = InputImage.fromFile(file);
-    final recognizedText = await textRecognizer.processImage(inputImage);
+    // final inputImage = InputImage.fromFile(file);
+    // final recognizedText = await textRecognizer.processImage(inputImage);
 
-    speak(recognizedText.text);
+    // speak(recognizedText.text);
 
     await navigator.push(
       MaterialPageRoute(
           builder: (BuildContext context) =>
-            //ResultScreen(text: recognizedText.text)
             YoloVideo(vision: vision)
       ),
     );
@@ -413,6 +410,9 @@ class _YoloVideoState extends State<YoloVideo> {
     Color colorPick = const Color.fromARGB(255, 50, 233, 30);
 
     return yoloResults.map((result) {
+
+      // speak("${result['tag']}.toStringAsFixed(0)}")
+
       return Positioned(
         left: result["box"][0] * factorX,
         top: result["box"][1] * factorY,
