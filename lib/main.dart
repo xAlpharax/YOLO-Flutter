@@ -10,7 +10,6 @@ import 'package:flutter_vision/flutter_vision.dart';
 // import 'package:yolo/result_screen.dart';
 
 import 'package:flutter/material.dart';
-import 'dart:typed_data';
 import 'dart:async';
 import 'dart:io';
 import 'dart:ui';

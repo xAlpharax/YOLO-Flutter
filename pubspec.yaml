@@ -15,7 +15,7 @@ dependencies:
 #  flutter_speed_dial: ^7.0.0
 #  flutter_tflite: ^1.0.1
   flutter_vision: ^1.1.4
-  permission_handler: ^10.4.3
+  permission_handler: ^11.0.1
   flutter_tts: ^3.8.2
 
   google_mlkit_text_recognition: ^0.10.0
@@ -29,7 +29,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: ^0.11.0
+  flutter_launcher_icons: ^0.13.1
 
   flutter_lints: ^2.0.0
 
