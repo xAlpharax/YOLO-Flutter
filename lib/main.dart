@@ -1,18 +1,11 @@
 import 'package:camera/camera.dart';
-// import 'package:permission_handler/permission_handler.dart';
-// import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
-// import 'package:google_mlkit_object_detection/google_mlkit_object_detection.dart';
-// import 'package:flutter_tflite/flutter_tflite.dart';
-// import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:flutter_vision/flutter_vision.dart';
-// import 'package:image_picker/image_picker.dart';
-
 import 'package:flutter/material.dart';
 import 'dart:async';
-// import 'dart:ui';
 
 late List<CameraDescription> cameras;
+
 void main() {
   runApp(const App());
 }
@@ -77,7 +70,7 @@ class _YoloVideoState extends State<YoloVideo> {
 
   init() async {
     cameras = await availableCameras();
-    controller = CameraController(cameras[0], ResolutionPreset.high, enableAudio: false);
+    controller = CameraController(cameras[0], ResolutionPreset.max, enableAudio: false);
     controller.initialize().then((value) {
       loadYoloModel().then((value) {
         setState(() {
@@ -106,7 +99,7 @@ class _YoloVideoState extends State<YoloVideo> {
       return const Scaffold(
         backgroundColor: Colors.transparent,
         body: Center(
-          child: Text("Model not loaded. Waiting for it."),
+          child: Text("Model not loaded. Waiting for it.", style: TextStyle(color: Colors.white)),
         ),
       );
     }
@@ -163,7 +156,7 @@ class _YoloVideoState extends State<YoloVideo> {
         labels: 'assets/labels.txt',
         modelPath: 'assets/yolov5n.tflite',
         modelVersion: "yolov5",
-        numThreads: 16,
+        numThreads: 8,
         useGpu: true);
     setState(() {
       isLoaded = true;
