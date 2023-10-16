@@ -1,18 +1,14 @@
-# yolo
+# YOLO-Flutter
 
-WORKING. Got Flutter-Vision to work with it.
+A fully functional Flutter application dedicated to the You Only Look Once (YOLO) algorithm for Real Time Object Detection / Segmentation. The [flutter_vision](https://github.com/vladiH/flutter_vision) package has been instrumental in setting this algorithm up as well as the models, references and infrastructure provided by [ultralytics](https://github.com/ultralytics/ultralytics)
 
-A new Flutter project.
+This repository is part of my entry at EUCYS 2023, representing Romania @ Brussels with apps for helping the visually impaired *see*.
 
-## Getting Started
+## Insructions
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Make sure to have the Flutter SDK installed and pointed at by your IDE.
+2. Open the repository with your IDE, go to pubspec.yaml and perform `pub get`
+3. Select a mobile device to run the application on.
+4. Hit Run.
+4. ???
+5. Profit..
