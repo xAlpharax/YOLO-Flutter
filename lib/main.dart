@@ -10,12 +10,10 @@ import 'package:flutter_vision/flutter_vision.dart';
 
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'dart:ui';
+// import 'dart:ui';
 
 late List<CameraDescription> cameras;
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  DartPluginRegistrant.ensureInitialized();
   runApp(const App());
 }
 
@@ -68,7 +66,7 @@ class _YoloVideoState extends State<YoloVideo> {
 
   Future<void> initTTS() async { // TTS
     await flutterTts.setLanguage("en-US"); // Set the language you want
-    await flutterTts.setSpeechRate(1.0); // Adjust speech rate (1.0 is normal but too fast for my liking)
+    await flutterTts.setSpeechRate(1.0); // Adjust speech rate (1.0 is normal)
     await flutterTts.setVolume(1.0); // Adjust volume (0.0 to 1.0)
     await flutterTts.setPitch(1.0); // Adjust pitch (1.0 is normal)
   }
@@ -93,8 +91,10 @@ class _YoloVideoState extends State<YoloVideo> {
 
   @override
   void dispose() async {
+
     flutterTts.stop(); // TTS Stop
     vision.closeYoloModel(); // YOLO Stop
+
     super.dispose();
     controller.dispose();
   }
@@ -163,7 +163,7 @@ class _YoloVideoState extends State<YoloVideo> {
         labels: 'assets/labels.txt',
         modelPath: 'assets/yolov5n.tflite',
         modelVersion: "yolov5",
-        numThreads: 2,
+        numThreads: 16,
         useGpu: true);
     setState(() {
       isLoaded = true;
