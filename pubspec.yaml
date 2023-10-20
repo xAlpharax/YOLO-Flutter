@@ -1,5 +1,5 @@
 name: yolo
-description: A new Flutter project.
+description: My Flutter Application for Real Time Object Detection / Semantic Segmentation.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
@@ -22,7 +22,7 @@ dev_dependencies:
     sdk: flutter
   flutter_launcher_icons: ^0.13.1
 
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.0
 
 flutter_icons:
   image_path: "assets/MegaViewLogo.png"
