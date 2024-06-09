@@ -13,7 +13,7 @@ dependencies:
   camera: ^0.10.5
   flutter_vision: ^1.1.4
   permission_handler: ^11.0.1
-  flutter_tts: ^3.8.2
+  flutter_tts: ^4.0.2
 
   cupertino_icons: ^1.0.2
 
@@ -22,7 +22,7 @@ dev_dependencies:
     sdk: flutter
   flutter_launcher_icons: ^0.13.1
 
-  flutter_lints: ^3.0.0
+  flutter_lints: ^4.0.0
 
 flutter_icons:
   image_path: "assets/MegaViewLogo.png"
