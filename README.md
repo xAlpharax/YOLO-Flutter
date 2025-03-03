@@ -12,3 +12,7 @@ This repository is part of my entry at EUCYS 2023, representing Romania in Bruss
 4. Hit Run.
 4. ???
 5. Profit.
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=xAlpharax/YOLO-Flutter&type=Date)](https://star-history.com/#xAlpharax/YOLO-Flutter&Date)
